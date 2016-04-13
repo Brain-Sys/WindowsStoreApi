@@ -6,10 +6,12 @@ namespace BrainSys.WindowsStore.ConsoleTest
     {
         static void Main(string[] args)
         {
+            string tenantId = "igordamianihotmail.onmicrosoft.com";
+            string clientId = "143f28c9-ce7e-4c81-9e82-03b84068ee22";
+            string clientSecret = "dnQpN31hTH1JWjpALVNdYkhUVClsd0tLNFRuLndvZ1c=";
+
             WindowsStoreApiConnector connector = new WindowsStoreApiConnector(
-                "igordamianihotmail.onmicrosoft.com",
-                "143f28c9-ce7e-4c81-9e82-03b84068ee22",
-                "dnQpN31hTH1JWjpALVNdYkhUVClsd0tLNFRuLndvZ1c=");
+                tenantId, clientId, clientSecret);
 
             AppAcquisitionsRequest request1 = new AppAcquisitionsRequest("9WZDNCRDQJJV");
             request1.StartDate = new DateTime(2015, 01, 01);
