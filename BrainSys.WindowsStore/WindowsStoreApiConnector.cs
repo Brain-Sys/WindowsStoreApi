@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -157,7 +158,8 @@ namespace BrainSys.WindowsStore
                 }
             }
 
-            return result.access_token;
+            JObject jObj = result as JObject;
+            return jObj.GetValue("access_token").ToString();
         }
     }
 }
