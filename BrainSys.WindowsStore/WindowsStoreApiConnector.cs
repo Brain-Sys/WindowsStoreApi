@@ -158,8 +158,17 @@ namespace BrainSys.WindowsStore
                 }
             }
 
+            JToken token = null;
             JObject jObj = result as JObject;
-            return jObj.GetValue("access_token").ToString();
+
+            if (jObj.TryGetValue("access_token", out token))
+            {
+                return token.ToString();
+            }
+            else
+            {
+                throw new UnauthorizedAccessException("Tenant Id, Client Id or Client Secret are invalid!");
+            }
         }
     }
 }
