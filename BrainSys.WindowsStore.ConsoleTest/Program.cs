@@ -6,10 +6,10 @@ namespace BrainSys.WindowsStore.ConsoleTest
     {
         static void Main(string[] args)
         {
-            string tenantId = "<tenant id>";
-            string clientId = "<client id>";
-            string clientSecret = "<client secret>";
-            string appId = "<app id>";
+            string tenantId = "igordamianihotmail.onmicrosoft.com";
+            string clientId = "143f28c9-ce7e-4c81-9e82-03b84068ee22";
+            string clientSecret = "aj5kTDctTmxoeFcybX0xe0FDXnVyXSFLK3svdTF1Z3U=";
+            string appId = "9wzdncrdqjjv";
 
             WindowsStoreApiConnector connector = new WindowsStoreApiConnector(
                 tenantId, clientId, clientSecret);

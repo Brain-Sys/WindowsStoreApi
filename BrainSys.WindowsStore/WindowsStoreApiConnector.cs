@@ -77,11 +77,11 @@ namespace BrainSys.WindowsStore
 
             if (string.IsNullOrEmpty(accessToken))
             {
-                accessToken = GetClientCredentialAccessToken(
+                accessToken = await GetClientCredentialAccessToken(
                       this.TenantId,
                       this.ClientId,
                       this.ClientSecret,
-                      scope).Result;
+                      scope);
             }
 
             // Get app acquisitions
