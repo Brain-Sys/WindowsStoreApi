@@ -29,6 +29,7 @@ namespace BrainSys.WindowsStore.WPF
             this.ValueTenantId.Text = config.AppSettings.Settings["tenantId"].Value.ToString();
             this.ValueClientId.Text = config.AppSettings.Settings["clientId"].Value.ToString();
             this.ValueClientSecret.Text = config.AppSettings.Settings["clientSecret"].Value.ToString();
+            this.ValueAppId.Text = config.AppSettings.Settings["appId"].Value.ToString();
         }
 
         private async void GetInfoButton_Click(object sender, RoutedEventArgs e)
@@ -41,6 +42,7 @@ namespace BrainSys.WindowsStore.WPF
             request.OrderBy.Add(OrderBy.Date);
             request.Top = 10;
             var response = await conn.GetAppAcquisitionsAsync(request);
+            MessageBox.Show(response.TotalCount.ToString());
         }
     }
 }
