@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,11 @@ namespace BrainSys.WindowsStore.WPF
         public MainWindow()
         {
             InitializeComponent();
+
+            var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            this.ValueTenantId.Text = config.AppSettings.Settings["tenantId"].Value.ToString();
+            this.ValueClientId.Text = config.AppSettings.Settings["clientId"].Value.ToString();
+            this.ValueClientSecret.Text = config.AppSettings.Settings["clientSecret"].Value.ToString();
         }
 
         private async void GetInfoButton_Click(object sender, RoutedEventArgs e)
